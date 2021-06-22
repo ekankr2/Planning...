@@ -87,5 +87,4 @@ public class ItemRepository {
 
         jdbcTemplate.update(query, itemNo);
     }
-
 }

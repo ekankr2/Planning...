@@ -58,6 +58,6 @@ public class ItemController {
 
         model.addAttribute("msg","삭제가 완료되었습니다.!");
 
-        return "item/removeSuccess";
+        return "item/success";
     }
 }
