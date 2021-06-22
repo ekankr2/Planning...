@@ -46,7 +46,8 @@ public class ItemRepository {
                         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 
-                        item.setRegDate(sdf.parse(rs.getDate("reg_date") + " " + rs.getTime("reg_date")));
+                        item.setRegDate(sdf.parse(rs.getDate("reg_date") + " " +
+                                rs.getTime("reg_date")));
 
                         //System.out.println("rs.getDate(): " + rs.getTimestamp("reg_date"));
                         //System.out.println("rs.getDate(): " + rs.getDate("reg_date"));
@@ -59,4 +60,32 @@ public class ItemRepository {
 
         return results;
     }
+    public Item read (Integer itemNo) throws Exception {
+        List<Item> results = jdbcTemplate.query(
+                "select item_no, name, price, seller, reg_date from item where item_no = ?",
+                new RowMapper<Item>() {
+                    @Override
+                    public Item mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Item item = new Item();
+
+                        item.setItemNo(rs.getInt("item_no"));
+                        item.setName(rs.getString("name"));
+                        item.setPrice(rs.getInt("price"));
+                        item.setSeller(rs.getString("seller"));
+                        item.setRegDate(rs.getDate("reg_date"));
+
+                        return item;
+
+                    }
+                }, itemNo);
+
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void delete(Integer itemNo) throws Exception {
+        String query = "delete from item where item_no = ?";
+
+        jdbcTemplate.update(query, itemNo);
+    }
+
 }

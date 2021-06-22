@@ -23,4 +23,13 @@ public class ItemServiceImpl implements ItemService{
         return repository.list();
     }
 
+    @Override
+    public Item read(Integer itemNo) throws Exception {
+        return repository.read(itemNo);
+    }
+
+    @Override
+    public void remove(Integer itemNo) throws Exception {
+        repository.delete(itemNo);
+    }
 }

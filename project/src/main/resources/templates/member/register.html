@@ -11,8 +11,6 @@
     li {
     margin: 20px;
     }
-
-
   </style>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -31,8 +29,9 @@
 <body>
 <center>
 <h3>가입 정보 입력하기</h3>
-
+</center>
 <form id="member" th:action="@{registerMember}" th:object="${member}" method="post">
+  <center>
   <table>
     <tr>
       <td>*이메일</td>
@@ -67,20 +66,36 @@
                  th:field="*{phoneNum}"></td>
     </tr>
   </table>
+  </center>
+
+
   <h4>약관 동의</h4>
-  <div>
-  <ul>
-    <li><input type="checkbox" value="consentall">모두 동의합니다.</li>
-    <li><input type="checkbox" value="consent">이용약관 필수 동의</li>
-    <li><input type="checkbox" value="personalinfo">개인정보 수집 및 이용 동의</li>
-    <li><input type="checkbox" value="coupon">쿠폰 / 이벤트 알림 선택 동의 (선택)</li>
-  </ul>
+  <div style="float:left">
+    <ul>
+      <li class="t">
+        <div><input type="checkbox" value="consentall" name="consentall" id="consentall">
+        <label for="consentall">모두 동의합니다.</label></div>
+      </li>
+      <li class="t">
+        <div><input type="checkbox" value="consent" name="consent" id="consent">
+          <label for="consent">이용약관 필수 동의</label></div>
+      </li>
+      <li class="t">
+        <div><input type="checkbox" value="personalinfo" name="personalinfo" id="personalinfo">
+          <label for="personalinfo">개인정보 수집 및 이용 동의</label></div>
+      </li>
+      <li class="t">
+      <div><input type="checkbox" value="coupon" name="coupon" id="coupon">
+        <label for="coupon">쿠폰 / 이벤트 알림 선택 동의 (선택)</label></div>
+      </li>
+    </ul>
   </div>
-</form>
+
   <div>
     <button style="background-color: orange; border-color: orange; color: white"
             type="submit" id="btnRegister">회원가입하기</button>
   </div>
-</center>
+</form>
 </body>
+
 </html>

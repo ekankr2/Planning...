@@ -41,4 +41,23 @@ public class ItemController {
 
         return "/item/list";
     }
+    @GetMapping("/read")
+    public String getRead (int itemNo, Model model) throws Exception {
+        log.info("read");
+
+        model.addAttribute(service.read(itemNo));
+
+        return "item/read";
+    }
+
+    @GetMapping("/remove")
+    public String remove (int itemNo, Model model) throws Exception {
+        log.info("remove");
+
+        service.remove(itemNo);
+
+        model.addAttribute("msg","삭제가 완료되었습니다.!");
+
+        return "item/removeSuccess";
+    }
 }
