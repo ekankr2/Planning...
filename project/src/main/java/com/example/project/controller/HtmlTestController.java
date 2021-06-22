@@ -15,6 +15,6 @@ public class HtmlTestController {
     public String firstIndex () {
         log.info("firstIndex() 실행");
 
-        return "Success";
+        return "MainPage";
     }
 }

@@ -9,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class Login {
+public class Member {
     private int memberNo;
     private String email;
     private String password;
