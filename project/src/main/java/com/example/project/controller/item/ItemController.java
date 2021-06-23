@@ -50,7 +50,7 @@ public class ItemController {
         return "item/read";
     }
 
-    @GetMapping("/remove")
+    @PostMapping("/remove")
     public String remove (int itemNo, Model model) throws Exception {
         log.info("remove");
 

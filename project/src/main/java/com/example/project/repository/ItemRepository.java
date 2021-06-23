@@ -75,7 +75,6 @@ public class ItemRepository {
                         item.setRegDate(rs.getDate("reg_date"));
 
                         return item;
-
                     }
                 }, itemNo);
 

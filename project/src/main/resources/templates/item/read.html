@@ -33,7 +33,7 @@
   <h3>상품 등록하기</h3>
 
   <form id="item" th:object="${item}" method="post">
-    <input type="hidden" name="boardNo" th:field="*{itemNo}"/>
+    <input type="hidden" name="itemNo" th:field="*{itemNo}"/>
     <table>
       <tr>
         <td>*상품명</td>
