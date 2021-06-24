@@ -3,15 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <link rel="stylesheet" href="/css/memberRegister.css">
 </head>
-<style>
-    ul {
-    list-style: none;
-    }
-    li {
-    margin: 20px;
-    }
-  </style>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -27,51 +20,54 @@
   });
 </script>
 <body>
-<center>
-<h3>가입 정보 입력하기</h3>
-</center>
 <form id="member" th:action="@{registerMember}" th:object="${member}" method="post">
-  <center>
-  <table>
+  <div id="page-container">
+    <div class="logo">
+      <h1>
+          <span>
+            <a href="/"><img src="/img/logo.png/" width="200" height="70"></a>
+          </span>
+        </a>
+      </h1>
+    </div>
+    <h3 class="top">가입 정보 입력하기</h3>
+    <table>
     <tr>
-      <td>*이메일</td>
+      <td class="m">*이메일</td>
     </tr>
     <tr>
       <td><input type="text" name="email"  placeholder="이메일을 입력해주세요."
-                 style="width:350px;height:40px;font-size:15px;"
+                 style="width:390px;height:40px;font-size:15px;"
                  th:field="*{email}"></td>
     </tr>
     <tr>
-      <td>*비밀번호</td>
+      <td class="m">*비밀번호</td>
     </tr>
     <tr>
       <td><input type="text" name="password" placeholder="비밀번호(영문+숫자+특수문자 8자이상)."
-                 style="width:350px;height:40px;font-size:15px;"
+                 style="width:390px;height:40px;font-size:15px;"
                  th:field="*{password}"></td>
     </tr>
     <tr>
-      <td>*이름</td>
+      <td class="m">*이름</td>
     </tr>
     <tr>
       <td><input type="text" name="name" placeholder="이름을 입력해주세요."
-                 style="width:350px;height:40px;font-size:15px;"
+                 style="width:390px;height:40px;font-size:15px;"
                  th:field="*{name}"></td>
     </tr>
     <tr>
-    <td>*전화번호</td>
+    <td class="m">*전화번호</td>
   </tr>
     <tr>
       <td><input type="text" name="phoneNum" placeholder="010-1234-5678"
-                 style="width:350px;height:40px;font-size:15px;"
+                 style="width:390px;height:40px;font-size:15px;"
                  th:field="*{phoneNum}"></td>
     </tr>
   </table>
-  </center>
-
-
-  <h4>약관 동의</h4>
-  <div style="float:left">
-    <ul>
+  <h4 class="bot">약관 동의</h4>
+  <div id="bottom">
+    <ul class="t">
       <li class="t">
         <div><input type="checkbox" value="consentall" name="consentall" id="consentall">
         <label for="consentall">모두 동의합니다.</label></div>
@@ -91,9 +87,10 @@
     </ul>
   </div>
 
+
   <div>
-    <button style="background-color: orange; border-color: orange; color: white"
-            type="submit" id="btnRegister">회원가입하기</button>
+    <button class="foot" type="submit" id="btnRegister">회원가입하기</button>
+  </div>
   </div>
 </form>
 </body>
