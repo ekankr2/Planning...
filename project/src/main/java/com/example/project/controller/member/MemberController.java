@@ -36,4 +36,10 @@ public class MemberController {
 
         return "/member/success";
     }
+    @PostMapping("/loginMember")
+    public String getLoginMember (Member member, Model model) {
+        log.info("getLoginMember()");
+
+        return "/member/login";
+    }
 }

@@ -1,0 +1,15 @@
+#page-container {
+    margin: 0 auto;
+    padding-bottom: 96px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+}
+page-container.logo {
+     width: 50%;
+     margin: auto;
+     display: block;
+ }
+.logo {
+    text-align: center;
+}

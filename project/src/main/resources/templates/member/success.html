@@ -2,12 +2,24 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>성공!</title>
+    <link rel="stylesheet" href="/css/success.css">
 </head>
 <body>
+<div class="logo">
+    <h1>
+          <span>
+            <a href="/"><img src="/img/logo.png/" width="200" height="70"></a>
+          </span>
+        </a>
+    </h1>
+</div>
   <h2>동작 성공~!</h2>
   <div>
     <h3 th:text="${msg}"></h3>
   </div>
+<div id="go-home">
+    <button type="button" onclick="location.href='/' ">홈으로 가기</button>
+</div>
 </body>
 </html>

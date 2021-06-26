@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+  <link rel="stylesheet" href="/css/loginMember.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var formObj = $("#member");
+
+    $("#btnLogin").on("click", function() {
+      formObj.attr("action", "loginMember");
+      formObj.attr("method", "post");
+      formObj.submit();
+    });
+  });
+</script>
+<body>
+<form id="member-login" th:action="@{loginMember}" th:object="${member}" method="post">
+  <div id="page-container">
+    <div class="logo">
+      <h1>
+          <span>
+            <a href="/"><img src="/img/logo.png/" width="200" height="70"></a>
+          </span>
+        </a>
+      </h1>
+    </div>
+    <main class="login">
+      <div class="login-container">
+          <input type="email" name="username" class="loin-input" placeholder="이메일">
+          <input type="password" name="password" class="loin-input" placeholder="비밀번호">
+      </div>
+        <div class="email-login-option">
+            <label class="email-label">
+            <input type="checkbox" name="email" class="check">
+                이메일 저장하기
+            </label>
+            <a href="findMember">아이디 / 비밀번호 찾기</a>
+        </div>
+        <button class="login_button" id="btnLogin">로그인</button>
+    </main>
+  </div>
+</form>
+</body>
+</html>
