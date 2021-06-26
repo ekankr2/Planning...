@@ -3,8 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>남대문시장</title>
+  <link rel="stylesheet" href="/css/mainPage.css">
 </head>
 <body>
-<h2>Success!</h2>
+  <div id="page-container">
+    <main id="main-page">
+      <div class="header">
+        <header class="header-wrapper">
+          <div class="header-container">
+            <h1 class="logo">
+              <a href="/"><img src="/img/logo.png" height="40" width="120"></a>
+            </h1>
+            <ul class="home-catagory">
+              <li class="menu-1">
+                <a class= "menu-1-link" href="/">
+                  <span>쇼핑하기</span>
+                </a>
+              </li>
+              <li class="menu-2">
+                <a class= "menu-2-link" href="/">
+                  <span>먹거리</span>
+                </a>
+              </li>
+              <li class="menu-3">
+                <a class= "menu-3-link" href="/">
+                  <span>자유게시판</span>
+                </a>
+              </li>
+            </ul>
+            <div class="header-util">
+              <button type="button:" onclick="location.href='/member/loginMember'" class="login-button">
+                로그인</button>
+              <button type="button:" onclick="location.href='/member/registerMember'" class="register-button">
+                회원가입</button>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="MainWrapper">
+        <div class="main-picture"></div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
