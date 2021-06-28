@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="/css/loginMember.css">
+    <link rel="stylesheet" href="/css/loginMember.css?after">
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,8 +21,6 @@
 </script>
 
 <body>
-<h2>로그인</h2>
-
 <form id="member" th:object="${member}" method="post">
     <div id="page-container">
     <div class="logo">
@@ -31,13 +29,14 @@
             <a href="/"><img src="/img/logo.png/" width="200" height="70"></a>
           </span>
         </h1>
+        <h1>로그인</h1>
     </div>
     <table>
         <tr>
             <td class="m">이메일</td>
         </tr>
         <tr>
-            <td><input type="text" name="name" placeholder="이메일 아이디"
+            <td><input type="email" name="name" placeholder="이메일 아이디"
                        style="width:390px;height:40px;font-size:15px;"
                        th:field="*{email}"></td>
         </tr>
@@ -50,11 +49,10 @@
                        th:field="*{password}"></td>
         </tr>
     </table>
+    <div class="button-login">
+    <button class="foot" type="submit" id="btnRegister">로그인</button>
+    </div>
     </div>
 </form>
-
-<div>
-    <button class="foot" type="submit" id="btnRegister">로그인</button>
-</div>
 </body>
 </html>

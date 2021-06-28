@@ -36,11 +36,22 @@ public class MemberController {
 
         return "/member/success";
     }
-    @GetMapping("/loginMember")
-    public String getLoginMember (Member member, Model model) {
-        log.info("getLoginMember()");
+    @GetMapping("/login")
+    public String getLogin (Member member, Model model) {
+        log.info("getLogin()");
 
         return "/member/login";
+    }
+
+    @PostMapping("/login")
+    public String postLogin (Member member, Model model) throws Exception {
+        log.info("postLogin(): " + member);
+
+        service.login(member);
+
+        model.addAttribute("msg", "로그인 성공!");
+
+        return "/member/success";
     }
     @GetMapping("/lists")
     public String getLists (Model model) throws Exception {
