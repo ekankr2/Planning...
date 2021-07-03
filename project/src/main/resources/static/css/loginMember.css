@@ -17,6 +17,20 @@ page-container.logo {
     padding-top: 5px;
     padding-bottom: 10px;
 }
+.login-box {
+    border:0;
+    background: none;
+    border: 1px solid #e0e0eb;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+}
+.login-box:focus {
+    border-color: #00c4c4;
+}
+.login-box:hover {
+    border-color: #8d8c8c;
+}
 .button-login {
     margin-top: 40px;
 }
@@ -34,4 +48,8 @@ page-container.logo {
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
+    transition: 0.25s;
+}
+.foot:hover {
+    background: #048282;
 }
