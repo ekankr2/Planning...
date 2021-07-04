@@ -21,7 +21,20 @@ page-container.logo {
 .m {
     padding-top: 5px;
     padding-bottom: 10px;
-
+}
+.register-box{
+    border:0;
+    background: none;
+    border: 1px solid #e0e0eb;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+}
+.register-box:focus {
+    border-color: #00c4c4;
+}
+.register-box:hover {
+    border-color: #8d8c8c;
 }
 .bot {
     text-align: center;
@@ -47,4 +60,8 @@ li.t {
     font-size: 18px;
     font-weight: 400;
     color: #ffffff;
+    transition: 0.25s;
+}
+.foot:hover {
+    background: #048282;
 }
