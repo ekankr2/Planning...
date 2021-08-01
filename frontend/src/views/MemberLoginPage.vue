@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <div>
     <web-header></web-header>
     <form>
       <v-text-field
@@ -19,16 +19,15 @@
           @input="$v.password.$touch()"
           @blur="$v.password.$touch()"
       ></v-text-field>
-      <v-btn xs12 md6
+      <v-btn
           class="loginButton"
           color="#00c4c4"
           @click="submit"
       >
-        submit
+        로그인
       </v-btn>
     </form>
-
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -69,18 +68,6 @@ export default {
     }),
 
     computed: {
-      checkboxErrors () {
-        const errors = []
-        if (!this.$v.checkbox.$dirty) return errors
-        !this.$v.checkbox.checked && errors.push('You must agree to continue!')
-        return errors
-      },
-      selectErrors () {
-        const errors = []
-        if (!this.$v.select.$dirty) return errors
-        !this.$v.select.required && errors.push('Item is required')
-        return errors
-      },
       passwordErrors () {
         const errors = []
         if (!this.$v.password.$dirty) return errors
@@ -114,9 +101,15 @@ export default {
 
 <style scoped>
 form{
-  margin: 0 25%;
+  margin: 10% 25%;
 }
-.loginButton{
-  margin-top: 20px;
+.v-btn {
+  margin-top: 60px;
+  width: 100%;
+  min-width: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  min-height: 45px;
 }
 </style>

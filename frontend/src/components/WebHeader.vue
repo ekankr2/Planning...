@@ -62,4 +62,5 @@ export default {
   margin: 0 40%;
   position: absolute;
 }
+
 </style>
