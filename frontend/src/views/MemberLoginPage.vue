@@ -3,50 +3,31 @@
     <web-header></web-header>
     <form>
       <v-text-field
-          v-model="name"
-          :error-messages="nameErrors"
-          :counter="10"
-          label="Name"
-          required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
-      ></v-text-field>
-      <v-text-field
           v-model="email"
           :error-messages="emailErrors"
-          label="E-mail"
+          label="이메일 아이디"
           required
           @input="$v.email.$touch()"
           @blur="$v.email.$touch()"
       ></v-text-field>
-      <v-select
-          v-model="select"
-          :items="items"
-          :error-messages="selectErrors"
-          label="Item"
+      <v-text-field
+          v-model="password"
+          :error-messages="passwordErrors"
+          :counter="20"
+          label="비밀번호"
           required
-          @change="$v.select.$touch()"
-          @blur="$v.select.$touch()"
-      ></v-select>
-      <v-checkbox
-          v-model="checkbox"
-          :error-messages="checkboxErrors"
-          label="Do you agree?"
-          required
-          @change="$v.checkbox.$touch()"
-          @blur="$v.checkbox.$touch()"
-      ></v-checkbox>
-
-      <v-btn
-          class="mr-4"
+          @input="$v.password.$touch()"
+          @blur="$v.password.$touch()"
+      ></v-text-field>
+      <v-btn xs12 md6
+          class="loginButton"
+          color="#00c4c4"
           @click="submit"
       >
         submit
       </v-btn>
-      <v-btn @click="clear">
-        clear
-      </v-btn>
     </form>
+
   </v-container>
 </template>
 
@@ -64,7 +45,7 @@ export default {
   },
 
     validations: {
-      name: { required, maxLength: maxLength(10) },
+      password: { required, maxLength: maxLength(20) },
       email: { required, email },
       select: { required },
       checkbox: {
@@ -75,7 +56,7 @@ export default {
     },
 
     data: () => ({
-      name: '',
+      password: '',
       email: '',
       select: null,
       items: [
@@ -100,18 +81,18 @@ export default {
         !this.$v.select.required && errors.push('Item is required')
         return errors
       },
-      nameErrors () {
+      passwordErrors () {
         const errors = []
-        if (!this.$v.name.$dirty) return errors
-        !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-        !this.$v.name.required && errors.push('Name is required.')
+        if (!this.$v.password.$dirty) return errors
+        !this.$v.password.maxLength && errors.push('비밀번호를 입력해주세요')
+        !this.$v.password.required && errors.push('비밀번호를 입력해주세요.')
         return errors
       },
       emailErrors () {
         const errors = []
         if (!this.$v.email.$dirty) return errors
-        !this.$v.email.email && errors.push('Must be valid e-mail')
-        !this.$v.email.required && errors.push('E-mail is required')
+        !this.$v.email.email && errors.push('이메일 형식이 올바르지 않습니다.')
+        !this.$v.email.required && errors.push('이메일을 입력해주세요.')
         return errors
       },
     },
@@ -134,5 +115,8 @@ export default {
 <style scoped>
 form{
   margin: 0 25%;
+}
+.loginButton{
+  margin-top: 20px;
 }
 </style>

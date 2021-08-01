@@ -4,7 +4,7 @@
         color="#8A2BE2"
         dark
     >
-      <div class="d-flex align-center hidden-sm-and-down">
+      <div class="d-flex align-center">
         <v-img
             class="shrink mr-1"
             contain
@@ -25,7 +25,7 @@
 
         <v-img
             alt="Center Logo"
-            class="hidden-sm-and-down"
+            class="centerLogo hidden-md-and-up"
             contain
             min-width="130"
             src="../assets/birdname.png"
@@ -58,4 +58,8 @@ export default {
 
 <style scoped>
 
+.centerLogo{
+  margin: 0 40%;
+  position: absolute;
+}
 </style>
