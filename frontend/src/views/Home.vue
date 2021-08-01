@@ -1,15 +1,17 @@
 <template>
-  <hello-world />
+  <web-header></web-header>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
 
+
+  import WebHeader from "../components/WebHeader";
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      WebHeader
+
     },
   }
 </script>
