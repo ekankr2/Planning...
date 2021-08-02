@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <web-header></web-header>
     <v-main>
       <router-view>
       </router-view>
@@ -8,9 +9,12 @@
 </template>
 
 <script>
-
+import WebHeader from "./components/WebHeader";
 export default {
   name: 'App',
+  components: {
+    WebHeader
+  },
 
   data: () => ({
     //

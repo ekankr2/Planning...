@@ -1,8 +1,8 @@
 <template>
   <div>
-    <web-header></web-header>
-    <form>
-      <v-text-field
+    <v-container>
+      <form>
+      <v-text-field flat solo
           v-model="email"
           :error-messages="emailErrors"
           label="이메일 아이디"
@@ -10,11 +10,13 @@
           @input="$v.email.$touch()"
           @blur="$v.email.$touch()"
       ></v-text-field>
-      <v-text-field
+
+      <v-text-field flat solo
           v-model="password"
           :error-messages="passwordErrors"
           :counter="20"
           label="비밀번호"
+          hint="At least 9 characters"
           required
           @input="$v.password.$touch()"
           @blur="$v.password.$touch()"
@@ -22,16 +24,15 @@
       <v-btn
           class="loginButton"
           color="#00c4c4"
-          @click="submit"
-      >
+          @click="submit">
         로그인
       </v-btn>
-    </form>
+      </form>
+    </v-container>
   </div>
 </template>
 
 <script>
-import WebHeader from "../components/WebHeader";
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
 
@@ -40,7 +41,7 @@ export default {
   name: "MemberLoginPage",
   mixins: [validationMixin],
   components: {
-    WebHeader
+
   },
 
     validations: {
@@ -58,13 +59,10 @@ export default {
       password: '',
       email: '',
       select: null,
-      items: [
-        'Item 1',
-        'Item 2',
-        'Item 3',
-        'Item 4',
-      ],
-      checkbox: false,
+      rules: {
+        required: value => !!value || 'Required.',
+        min: v => v.length >= 8 || 'Min 8 characters',
+      },
     }),
 
     computed: {
@@ -100,9 +98,20 @@ export default {
 </script>
 
 <style scoped>
-form{
-  margin: 10% 25%;
+
+@media screen and (min-width: 768px) {
+  form{
+    margin: 10% 27%;
+  }
 }
+
+@media screen and (max-width: 768px) {
+  form{
+    margin: 5% 10%;
+  }
+}
+
+
 .v-btn {
   margin-top: 60px;
   width: 100%;

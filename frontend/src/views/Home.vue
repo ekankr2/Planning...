@@ -1,16 +1,16 @@
 <template>
-  <web-header></web-header>
+  <div>
+
+  </div>
 </template>
 
 <script>
 
-
-  import WebHeader from "../components/WebHeader";
   export default {
     name: 'Home',
 
     components: {
-      WebHeader
+
 
     },
   }
