@@ -1,17 +1,16 @@
 <template>
-  <div>
-    <v-app-bar
-        app
-        color="#8A2BE2"
-        dark>
-      <div class="d-flex align-center">
+  <v-container>
+    <v-app-bar app color="#8A2BE2" dark>
+
+        <router-link to="/">
         <v-img
-            class="shrink mr-1"
+            class="shrink mr-1 hidden-sm-and-down"
             contain
             src="../assets/birdlogo.png"
             transition="scale-transition"
             width="70"/>
-
+        </router-link>
+        <router-link to="/">
         <v-img
             alt="Left Logo"
             class="hidden-sm-and-down"
@@ -19,15 +18,24 @@
             min-width="130"
             src="../assets/birdname.png"
             width="130"/>
+        </router-link>
+
+      <v-row justify="end">
+        <router-link to="/">
 
         <v-img
             alt="Center Logo"
-            class="centerLogo hidden-md-and-up"
+            class="centerLogo hidden-md-and-up ml-10"
             contain
-            min-width="130"
+            min-width="150"
             src="../assets/birdname.png"
-            width="130"/>
-      </div>
+            width="150"/>
+
+        </router-link>
+      </v-row>
+
+
+
 
       <v-spacer></v-spacer>
 
@@ -67,8 +75,8 @@
           </div>
         </template>
       </v-navigation-drawer>
+  </v-container>
 
-  </div>
 </template>
 
 <script>
@@ -103,12 +111,7 @@ div{
   user-select: none;
 }
 
-.centerLogo{
-  margin: 0 40%;
-  position: absolute;
-}
-.v-navigation-drawer{
-  right: 0;
-}
+
+
 
 </style>

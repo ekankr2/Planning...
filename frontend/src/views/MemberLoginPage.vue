@@ -1,32 +1,45 @@
 <template>
   <div>
-    <v-container>
+    <v-container grid-list-md>
       <form>
-      <v-text-field flat solo
-          v-model="email"
-          :error-messages="emailErrors"
-          label="이메일 아이디"
-          required
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
-      ></v-text-field>
+        <v-row justify="center">
+          <h3>로그인</h3>
+          </v-row>
+        <v-layout row wrap>
+            <v-row justify="center">
+              <v-flex xs9 md8>
+                <v-text-field flat solo class="mt-15"
+                  v-model="email"
+                  :error-messages="emailErrors"
+                  label="이메일 아이디"
+                  required
+                  @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()">
+                </v-text-field>
+              </v-flex>
 
-      <v-text-field flat solo
-          v-model="password"
-          :error-messages="passwordErrors"
-          :counter="20"
-          label="비밀번호"
-          hint="At least 9 characters"
-          required
-          @input="$v.password.$touch()"
-          @blur="$v.password.$touch()"
-      ></v-text-field>
+            <v-flex xs9 md8>
+                <v-text-field flat solo class="mt-5"
+                  v-model="password"
+                  :error-messages="passwordErrors"
+                  :counter="20"
+                  label="비밀번호"
+                  hint="At least 9 characters"
+                  required
+                  @input="$v.password.$touch()"
+                  @blur="$v.password.$touch()">
+                </v-text-field>
+            </v-flex>
+            </v-row>
+        </v-layout>
+        <v-row justify="center"  >
       <v-btn
-          class="loginButton"
+          class="loginButton mt-16"
           color="#00c4c4"
           @click="submit">
         로그인
       </v-btn>
+        </v-row>
       </form>
     </v-container>
   </div>
@@ -99,26 +112,13 @@ export default {
 
 <style scoped>
 
-@media screen and (min-width: 768px) {
-  form{
-    margin: 10% 27%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  form{
-    margin: 5% 10%;
-  }
-}
-
-
 .v-btn {
-  margin-top: 60px;
-  width: 100%;
+
+  width: 45%;
   min-width: 100%;
   color: #fff;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
-  min-height: 45px;
+  min-height: 50px;
 }
 </style>
